@@ -30,3 +30,8 @@ where id >0;
 update movies.tags 
 set tag = replace(tag,' ', '-')
 where id > 0;
+
+use movies;
+select m.movieid, g.genres,m.genres
+from movies m, genre g
+where g.genres like concat('%',g.genres,'%')
